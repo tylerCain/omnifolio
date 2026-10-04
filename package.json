@@ -1,0 +1,26 @@
+{
+  "name": "cryptfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/src/index.js",
+  "type": "module",
+  "engines": {
+    "node": "16"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "node --experimental-modules server/src/index.js",
+    "client": "cd client/src && npm start"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^8.0.1",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "pg": "^8.10.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
