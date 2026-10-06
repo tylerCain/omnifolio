@@ -1,10 +1,9 @@
 import addToHolding from '../../services/holding/addToHolding.js'
 
 export const putHolding = async (req) => {
-  console.log('PUT HOLDING', req.body)
-  const { portfolioId, coinId, amount, purchasePrice } = req.body
+  const asset = req.body
 
-  const holdingId = await addToHolding(portfolioId, coinId, amount, purchasePrice)
+  const holdingId = await addToHolding(asset, req.auth.payload.sub, req.auth.payload)
 
   if (holdingId) {
     return {
@@ -16,4 +15,3 @@ export const putHolding = async (req) => {
     status: 400,
   }
 }
-

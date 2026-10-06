@@ -6,8 +6,7 @@ import UpdateHolding from './addToHolding'
 
 const Portfolio = () => {
   const [view, setView] = useState('')
-  const portfolio = usePortfolio(2)
-  //const portfolio = usePortfolio(5)
+  const portfolio = usePortfolio()
 
   if (!portfolio.isSuccess) return null
 

@@ -16,9 +16,12 @@ client/node_modules
 temp.json
 .DS_Store
 .env.local
+.env
 .env.development.local
 .env.test.local
 .env.production.local
+DEVELOPMENT_ROADMAP.md*
+BUSINESS_PLAN.md*
 
 npm-debug.log*
 yarn-debug.log*

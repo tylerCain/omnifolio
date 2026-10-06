@@ -18,7 +18,9 @@
   "dependencies": {
     "concurrently": "^8.0.1",
     "cors": "^2.8.5",
+    "dotenv": "^18.0.5",
     "express": "^4.18.2",
+    "express-oauth2-jwt-bearer": "^1.10.0",
     "pg": "^8.10.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

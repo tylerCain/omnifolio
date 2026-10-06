@@ -1,19 +1,18 @@
-import getPortfolio from '../../services/portfolio/getPortfolio.js'
+import getPortfolio, { getOrCreateUserPortfolio } from '../../services/portfolio/getPortfolio.js'
 
 export const returnPortfolio = async (req) => {
   const { portfolioId } = req.params
+  const auth0Sub = req.auth.payload.sub
+  const profile = req.auth.payload
+  const portfolio = portfolioId
+    ? await getPortfolio(portfolioId, auth0Sub)
+    : await getOrCreateUserPortfolio(auth0Sub, profile)
 
-  console.log(req)
-
-  const holdings = await getPortfolio(portfolioId)
-
-  if (holdings) {
+  if (portfolio) {
     return {
       status: 200,
-      body: { holdings },
+      body: portfolio,
     }
   }
-  return {
-    status: 400,
-  }
+  return { status: 404, body: { error: 'Portfolio not found' } }
 }

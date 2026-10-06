@@ -1,9 +1,9 @@
 import createHolding from '../../services/holding/createHolding.js'
 
 export const postHolding = async (req) => {
-  const { portfolioId, coinId, amount, purchasePrice } = req.body
+  const asset = req.body
 
-  const holdingId = await createHolding(portfolioId, coinId, amount, purchasePrice)
+  const holdingId = await createHolding(asset, req.auth.payload.sub, req.auth.payload)
 
   if (holdingId) {
     return {
@@ -15,4 +15,3 @@ export const postHolding = async (req) => {
     status: 400,
   }
 }
-

@@ -7,8 +7,10 @@ const Layout = () => (
   <div className="app">
     <Box
       width={1}
-      height={1}
-      sx={{ backgroundImage: 'linear-gradient(to bottom right, #274472, #C3E0E5, #5885AF)' }}
+      sx={{
+        backgroundImage: 'linear-gradient(to bottom right, #274472, #C3E0E5, #5885AF)',
+        minHeight: '100vh',
+      }}
     >
       <Navbar />
       <div className="body">

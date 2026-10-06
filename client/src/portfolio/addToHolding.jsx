@@ -28,7 +28,7 @@ const UpdateHolding = ({ holdings, setView, view }) => {
 
   const onSubmit = (data) => {
     console.log('mutating')
-    updateHoldingMutation.mutate({ ...data, portfolioId: 2 })
+    updateHoldingMutation.mutate(data)
     setView('')
   }
 
